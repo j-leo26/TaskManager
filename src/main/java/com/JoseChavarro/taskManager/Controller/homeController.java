@@ -11,4 +11,3 @@ public class homeController {
         return "index";
     }
 }
-

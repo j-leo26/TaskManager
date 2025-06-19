@@ -5,11 +5,9 @@
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- MDB CSS -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
-    rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css" rel="stylesheet"/>
 
+      <link rel="stylesheet" th:href="@{/css/login.css}" />
 
     <meta charset="UTF-8">
     <title layout:fragment="title">TaskManager</title>
@@ -50,7 +48,7 @@
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
+          <a class="nav-link" href="/">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Dashboard</a>
@@ -62,11 +60,11 @@
       <!-- Left links -->
 
       <div class="d-flex align-items-center">
-        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
+        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2" onclick="location.href='/login'">
           Login
         </button>
-        <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
-          Sign up for free
+        <button id="signup-btn" data-mdb-ripple-init type="button" class="btn btn-primary me-3" onclick="location.href='/login?register=true'">
+        Sign up for free
         </button>
         <a
           data-mdb-ripple-init
@@ -85,7 +83,7 @@
 </header>
 
 <main layout:fragment="content">
-    Contenido principal por defecto
+    
 </main>
 
 
@@ -147,6 +145,8 @@
   <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
 </div>
 
+
+
 <!-- MDB JS - al final, justo antes del cierre de </body> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"></script>
 
@@ -163,6 +163,16 @@
     }
   });
 </script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- MDB JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"></script>
+
+<!-- Script condicional para el login -->
+<script th:src="@{/js/login.js}"></script>
+
 
 </body>
 </html>
